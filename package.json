@@ -1,0 +1,25 @@
+{
+  "name": "user-authentication-api",
+  "version": "1.0.0",
+  "description": "Microsservice criado no bootcamp do banco inter",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./",
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriel-lumertz/node-user-authentication-api.git"
+  },
+  "author": "Gabriel Lumertz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabriel-lumertz/node-user-authentication-api/issues"
+  },
+  "homepage": "https://github.com/gabriel-lumertz/node-user-authentication-api#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "typescript": "^4.6.3"
+  }
+}
