@@ -3,9 +3,9 @@ import express, { Request, Response, NextFunction} from 'express'
 const app = express()
 
 app.get('/status', (req: Request, res: Response, next: NextFunction) => {
-    res.status(200).send({foo: 'bar'})
+    res.status(200).send({foo: 'teste'})
 })
 
 app.listen(3000, () => {
-    console.log('Rodadndo')
+    console.log('Servidor rodando na porta 3000')
 })
