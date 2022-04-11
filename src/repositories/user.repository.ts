@@ -34,7 +34,7 @@ class UserRepository {
                 username,
                 password
             )
-            VALUES ($1, crypt($2, $3))
+            VALUES ($1, crypt($2, 'my_salt'))
             RETURNING uuid
         `
 
