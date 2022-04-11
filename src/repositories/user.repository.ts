@@ -21,10 +21,8 @@ class UserRepository {
         `
 
         const values = [uuid]
-
         const { rows } = await db.query<User>(query, values)
-        const [user] = rows
-        
+        const [user] = rows        
         return user
     }
 
@@ -39,10 +37,33 @@ class UserRepository {
         `
 
         const values = [user.username, user.password]
-
         const { rows } = await db.query<{ uuid: string }>(query, values)
         const [newUser] = rows
         return newUser.uuid
+    }
+
+    async update(user: User): Promise<void> {
+        const query = `
+            UPDATE application_user
+            SET
+                username = $1,
+                password = $2
+            WHERE uuid = $3
+        `
+
+        const values = [user.username, user.password, user.uuid]
+        await db.query(query, values)
+    }
+
+    async remove(uuid: string): Promise<void> {
+        const query = `
+            DELETE
+            FROM application_user
+            WHERE uuid = $1
+        `
+
+        const values = [uuid]
+        await db.query(query, values)
     }
 
 }
